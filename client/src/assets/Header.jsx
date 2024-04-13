@@ -31,7 +31,7 @@ function Header() {
               About
             </li>
           </Link>
-          <Link to="./profile">
+          <Link to="/signin">
             <li className="hidden sm:inline text-slate-700 hover:underline">
               SignIn
             </li>
