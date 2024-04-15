@@ -27,11 +27,10 @@ app.use("/api/user", useRouter);
 app.use("/api/auth", authRouter);
 
 app.use((err, req, res, next) => {
-  console.log(err.statusCode);
-  const statusCode = 500;
-  const message = err.message; //Internal Server Error
+  const statusCode = err.statusCode || 500;
+  const message = err.message || "Internal Server Error";
   return res.status(statusCode).json({
-    sucess: false,
+    success: false,
     statusCode, //we can also write statusCode:statusCode but after ES6 features if vaiables and key same we dont need to write like that.
     message,
   });

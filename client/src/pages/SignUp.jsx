@@ -6,7 +6,6 @@ export default function SignUp() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  console.log(formData);
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -46,33 +45,34 @@ export default function SignUp() {
         <input
           type="text"
           placeholder="username"
-          className="border-4 p-3 rounded-lg"
+          className="border p-3 rounded-lg"
           id="username"
           onChange={handleChange}
         />
         <input
           type="email"
           placeholder="email"
-          className="border-4 p-3 rounded-lg"
+          className="border p-3 rounded-lg"
           id="email"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="password"
-          className="border-4 p-3 rounded-lg"
+          className="border p-3 rounded-lg"
           id="password"
           onChange={handleChange}
         />
+
         <button
           disabled={loading}
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
         >
-          {loading ? "Loading" : "sign-up"}
+          {loading ? "Loading..." : "Sign Up"}
         </button>
       </form>
-      <div className="flex gap-3 mt-3">
-        <p>Have a account</p>
+      <div className="flex gap-2 mt-5">
+        <p>Have an account?</p>
         <Link to={"/signin"}>
           <span className="text-blue-700">Sign in</span>
         </Link>
